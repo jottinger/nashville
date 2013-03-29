@@ -36,6 +36,8 @@ public class Nashville {
     String key="C";
     @Parameter(names="-mode")
     String mode="major";
+    @Parameter(names="-capo",validateWith = PositiveInteger.class)
+    int offset=0;
     @Parameter(description="files")
     List<String> files=new ArrayList<>();
 
@@ -54,7 +56,7 @@ public class Nashville {
                 String input;
                 while(scanner.hasNext()) {
                     input=scanner.nextLine();
-                    System.out.println(processor.process(key, mode, input));
+                    System.out.println(processor.process(key, mode, input, offset));
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();

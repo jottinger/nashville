@@ -31,6 +31,6 @@ public class ModeBuilderTest {
     public void testMode() {
         System.out.println(m.modes.get("major"));
         System.out.println(m.notes);
-        System.out.println(m.getNote("major", "a", "iii"));
+        System.out.println(m.getNote("major", "a", "iii", 0));
     }
 }

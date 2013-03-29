@@ -92,8 +92,8 @@ public class ModeBuilder {
         return modes.get(mode.toLowerCase()).get(convertFromRoman(index));
     }
 
-    public String getNote(String mode, String key, String numeral) {
-        int offset=0;
+    public String getNote(String mode, String key, String numeral, int capoOffset) {
+        int offset = 0;
         if (numeral.endsWith("b")) {
             offset = -1;
         } else {
@@ -104,7 +104,11 @@ public class ModeBuilder {
 
         int step = getStep(mode, numeral);
         int base = notes.indexOf(key.toUpperCase());
-        return notes.get(base + step + offset);
+        int index=base + step + offset - capoOffset;
+        if(index<0) {
+            index+=12;
+        }
+        return notes.get(index);
     }
 
     enum Numerals {I, II, III, IV, V, VI, VII, VIII, IX, X, XI, XII}
