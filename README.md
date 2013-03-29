@@ -34,11 +34,13 @@ run
 
 Assuming the built jar file is `$NASHVILLE_JAR`, using the application is simple.
 
-    java -jar $NASHVILLE_JAR [-mode major] [-key C] file list
+    java -jar $NASHVILLE_JAR [-capo 0] [-mode major] [-key C] file list
 
 There are currently two modes supported, each with two names: `major`, `ionian`, `minor`, `aeolian`. (Ionian is the greek name for the major mode, and Aeolian is the greek mode corresponding to the minor mode.)
 
 The default mode and key is C major.
+
+The capo is meant to represent the potential capo position. Thus, if one were playing a song in C with a capo on the fifth fret, one would play the C as if it were an open G.
 
 notes
 =====
