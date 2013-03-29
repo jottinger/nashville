@@ -39,3 +39,12 @@ Assuming the built jar file is `$NASHVILLE_JAR`, using the application is simple
 There are currently two modes supported, each with two names: `major`, `ionian`, `minor`, `aeolian`. (Ionian is the greek name for the major mode, and Aeolian is the greek mode corresponding to the minor mode.)
 
 The default mode and key is C major.
+
+notes
+=====
+
+Note that going from Nashville Numbering to actual chords may not be all that useful! It might be better to leave the files in Nashville format, rendering them from there (i.e., retaining the I/IV/V).
+
+In that case, don't bother with this program (although it's fairly neat, I think; it'd be useful for people who don't know their scales very well).
+
+I've submitted a patch for chordii that handles Nashville Numbering gracefully (without warnings and without the chord grids). This may be more suitable if you prefer to preserve the Nashville numbering, which isn't a bad idea.
